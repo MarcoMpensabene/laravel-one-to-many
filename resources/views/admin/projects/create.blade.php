@@ -11,7 +11,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="title">Project title</label>
-                        <input class="form-control form-control-sm" type="text" placeholder="Project title" aria-label="Project title" title="title" id="title" required>
+                        <input class="form-control form-control-sm" type="text" placeholder="Project title" aria-label="Project title" title="title" id="title">
                         @error('title')
                         <div class="alert alert-danger mt-2">
                             {{$message}}
@@ -21,7 +21,7 @@
 
                     <div class="mb-3">
                         <label for="description">Description</label>
-                        <textarea class="form-control form-control-sm" type="text" placeholder="Description" aria-label="Description" title="description" id="description" required></textarea>
+                        <textarea class="form-control form-control-sm" type="text" placeholder="Description" aria-label="Description" title="description" id="description" ></textarea>
                         @error('description')
                         <div class="alert alert-danger mt-2">
                             {{$message}}

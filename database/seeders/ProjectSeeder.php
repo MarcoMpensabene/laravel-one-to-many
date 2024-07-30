@@ -18,6 +18,7 @@ class ProjectSeeder extends Seeder
         $types = Type::all()->pluck('id');
         for ($i = 0; $i < 20; $i++) {
             $newProject = new Project();
+            $newProject->type_id = $faker->randomElement($types); // ! ci prende un id random nell'array types
             $newProject->title = $faker->sentence(3);
             $newProject->description = $faker->paragraph(3);
             $newProject->author = $faker->name;

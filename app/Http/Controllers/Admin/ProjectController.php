@@ -34,7 +34,6 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $data = $request->validated();
-        $data['author'] = Auth::user()->name;
         $newProject = Project::create($data);
         return redirect()->route('admin.projects.show', $newProject);
     }
@@ -63,7 +62,7 @@ class ProjectController extends Controller
         // dd($request->all());
         $data = $request->validated(); //richiedo tutti i dati
         $project->update($data); // modifico i dati del singolo Projecte attraverso il mio form con i value già presenti
-        return redirect()->route('admin.projects.show', $project)->with('message', $project->name . " Has Been Edited");
+        return redirect()->route('admin.projects.show', $project)->with('message', $project->title . " Has Been Edited");
     }
 
     /**
@@ -72,7 +71,7 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('admin.projects.index')->with('message', "N:" . $project->id . " " . $project->name . " Has Been Deleted");
+        return redirect()->route('admin.projects.index')->with('message', "N:" . $project->id . " " . $project->title . " Has Been Deleted");
     }
 
     public function deletedIndex()
@@ -85,13 +84,13 @@ class ProjectController extends Controller
     {
         $project = Project::onlyTrashed()->findOrFail($id);
         $project->restore();
-        return redirect()->route('admin.projects.deleted-index')->with('message', $project->name . " Has Been Restored");
+        return redirect()->route('admin.projects.deleted-index')->with('message', $project->title . " Has Been Restored");
     }
 
     public function permanentDelete(string $id)
     {
         $project = Project::onlyTrashed()->findOrFail($id);
         $project->forceDelete();
-        return redirect()->route('admin.projects.deleted-index')->with('message', $project->name . " Has Been Permanently Removed");
+        return redirect()->route('admin.projects.deleted-index')->with('message', $project->title . " Has Been Permanently Removed");
     }
 }
