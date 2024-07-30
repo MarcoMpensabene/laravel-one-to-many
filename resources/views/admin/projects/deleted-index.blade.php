@@ -16,7 +16,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">id</th>
-                                <th scope="col">Projecttitle</th>
+                                <th scope="col">Projectname</th>
                                 <th scope="col">Desciption</th>
                                 <th scope="col">Author</th>
                                 <th scope="col">Image_url</th>
