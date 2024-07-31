@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
+use function PHPSTORM_META\type;
 
 class ProjectController extends Controller
 {
@@ -23,9 +26,11 @@ class ProjectController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Project $project)
+    public function create()
     {
-        return view('admin.projects.create');
+        $project = new Project();
+        $types = Type::all();
+        return view('admin.projects.create', compact('project', 'types'));
     }
 
     /**
@@ -52,7 +57,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**

@@ -11,7 +11,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Project : {{$project->title}}</h5>
-                                <h4>{{ $project->type ? $project->type->name : 'No type' }}</h4>
+                                <h4 class="badge text-bg-primary" >{{ $project->type ? $project->type->name : 'No type' }}</h4>
                                 <p class="card-text">Description : {{$project->description}}</p>
                                 <p class="card-text"><small class="text-body-secondary">Autore : {{$project->author}}</small></p>
                                 <p class="card-text">Stack : {{$project->stack}}</p>

@@ -30,7 +30,7 @@
                                 <td >{{$project->id}}</td>
                                 <td >{{$project->title}}</td>
                                 <td >{{$project->description}}</td>
-                                <td >{{$project->autdor}}</td>
+                                <td >{{$project->author}}</td>
                                 <td >{{$project->image_url}}</td>
                                 <td >{{$project->stack}}</td>
                                 <td >

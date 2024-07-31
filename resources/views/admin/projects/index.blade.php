@@ -31,7 +31,7 @@
                             <td >{{$project->type->name}}</td>
                             @else
                             <td >No type</td> --}}
-                            <td>{{ $project->type ? $project->type->name : 'No type' }}</td> <!-- Ternario dell'if che precede  -->
+                            <td >{{ $project->type ? $project->type->name : 'No type' }}</td> <!-- Ternario dell'if che precede  -->
                             <td>{{ $project->title }}</td>
                             <td>{{ Str::limit($project->description, 50) }}</td> <!-- Limita la lunghezza -->
                             <td>{{ $project->author }}</td>
