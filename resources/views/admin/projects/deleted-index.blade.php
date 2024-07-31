@@ -27,13 +27,13 @@
                         <tbody class="table-group-divider">
                         @foreach ($projects as $project)
                             <tr>
-                                <th >{{$project->id}}</th>
-                                <th >{{$project->title}}</th>
-                                <th >{{$project->description}}</th>
-                                <th >{{$project->author}}</th>
-                                <th >{{$project->image_url}}</th>
-                                <th >{{$project->stack}}</th>
-                                <th >
+                                <td >{{$project->id}}</td>
+                                <td >{{$project->title}}</td>
+                                <td >{{$project->description}}</td>
+                                <td >{{$project->autdor}}</td>
+                                <td >{{$project->image_url}}</td>
+                                <td >{{$project->stack}}</td>
+                                <td >
                                     <div class="d-flex">
                                         <form action="{{route("admin.projects.restore" , $project)}}" method="POST" class="me-2">
                                             @method("PATCH")
@@ -46,7 +46,7 @@
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </div>
-                                </th>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
