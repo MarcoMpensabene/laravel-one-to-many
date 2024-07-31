@@ -21,7 +21,9 @@
                 <div class="mb-3">
                     <select class="form-select" aria-label="Default select example" name="type_id">
                         @foreach ($types as $type)
-                        <option value="{{$type->id}}"> {{$type->name}}</option>
+                        <option value="{{$type->id}}"
+                            {{$type->id == old('type_id' , $project->type_id) ? "selected" : ""}}
+                            > {{$type->name}}</option>
                         @endforeach
                     </select>
                     @error('type')
